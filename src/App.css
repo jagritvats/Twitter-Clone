@@ -1,0 +1,112 @@
+#root{
+  display: flex;
+  justify-content: center;
+}
+
+.App{
+  display: flex;
+  flex-direction: row;
+  font-family: sans-serif;
+  justify-content: space-around;
+  
+  max-width: 1080px;
+  width: 100%;
+}
+
+.App > .MuiCircularProgress-root{
+  margin-top: 40vh;
+}
+
+.App__content{
+  flex: 0.6;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.App__content>*{
+  width: 100%;
+}
+
+.navbar, .sidebar {
+  position: sticky;
+  top:0px;
+  flex: 0.2;
+  min-height: 100vh;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.navbar{
+  border-right: 1px solid lightgray;
+}
+
+.sidebar{
+  border-left: 1px solid lightgray;
+}
+
+/* Header Styles */
+
+header{
+  display: flex;
+  height: 60px;
+  border-bottom: 1px solid lightgray;
+  align-items: center;
+  padding:0.2em 1em;
+}
+
+header{
+  gap:1em;
+}
+
+header > .MuiSvgIcon-root{
+  border-radius: 50%;
+  padding: 0.1em;
+  font-size: 2em;
+  color: #1da1f2;
+}
+
+header > .MuiSvgIcon-root:hover{
+  background-color: #1da0f227;
+  cursor: pointer;
+}
+
+/* Elements general styling */
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+textarea {
+  font-family: inherit;
+}
+
+
+@media screen and (max-width:720px){
+
+  nav.navbar, .sidebar{
+    align-items: center;
+    flex:0.1;
+    padding:0;
+    margin: 0;
+  }
+
+  .App__content{
+    flex: 0.8;
+  }
+
+  .navbar__profile, .navbar__tweet{
+    display: none;
+  }
+}
+
+@media screen and (max-width:480px){
+  .sidebar{
+    display: none;
+  }
+
+  .App__content{
+    flex: 0.9;
+  }
+}

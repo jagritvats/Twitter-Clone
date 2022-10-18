@@ -1,0 +1,64 @@
+.auth{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: "Verdana",sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+.auth a{
+    text-decoration: underline;
+    color:blue;
+}
+
+.auth h1{
+    padding: 1em 0em;
+}
+
+.auth__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 400px;
+    width: 100%;
+    min-width: 300px;
+    padding:1em 0em;
+    padding-bottom: 2em;
+}
+
+.twittericon{
+    text-align: left;
+}
+
+.auth__container> .twittericon > .MuiSvgIcon-root{
+    color:#1da1f2;
+    font-size: 2em;
+}
+
+.auth__form{
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+}
+
+.auth__form > button {
+    background-color: #1da1f2;
+    color: white;
+    padding: 1em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+.auth__form > button:disabled{
+    background-color: #8dcff8;
+}
+
+p.error {
+    color: red;
+    font-size: 10px;
+    margin:0;
+}

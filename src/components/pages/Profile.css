@@ -1,0 +1,86 @@
+.profilePage__cover{
+    background-color: #c4cfd6;
+    height: 12vw;
+    min-height: 100px;
+}
+
+.profilePage__details{
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.profilePage__profImg{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: -14%;
+    border: 5px solid white;
+}
+
+.profilePage__profImg > img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profilePage__tabs{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.profilePage__editProfileBtn{
+    border: 1px solid #1da1f2;
+    color: #1da1f2;
+    background-color: white;
+    border-radius: 30px;
+    padding: 0.6em 2em;
+    font-weight: 600;
+    margin-left: auto;
+    margin-top: -5%;
+}
+
+.profilePage__editProfileBtn:hover{
+    cursor: pointer;
+    background-color: #1da0f223;
+}
+
+.profilePage__username, .joined{
+    color: #5b7083;
+}
+
+.joined{
+    display: flex;
+    align-items: center;
+    gap:0.4em;
+}
+
+.bio, .profilePage__followState{
+    margin: 1em 0em;
+}
+
+.profilePage__followState {
+    display: flex;
+    gap: 1em;
+}
+
+.profilePage__tab{
+    font-weight: 600;
+    color: #5b7083;
+    background-color: whitesmoke;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0.8em 2em;
+    font-size: 0.8em;
+    border-top: 4px solid transparent;
+}
+
+.profilePage__tab:hover{
+    cursor: pointer;
+    background-color: #1da0f223;
+}
+
+.profilePage__tab.active{
+    border-bottom: 4px solid #1da1f2;
+}

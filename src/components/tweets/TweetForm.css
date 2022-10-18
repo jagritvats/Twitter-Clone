@@ -1,0 +1,90 @@
+
+.tweetForm{
+    display: flex;
+    padding: 1em;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 0.5em;
+}
+
+.tweetForm__main{
+    
+}
+
+.tweetForm__text{
+    border: none;
+    resize: none;
+    margin-bottom: 0.6em;
+    width: 100%;
+    margin-left: 1em;
+    margin-top: 0.6em;
+}
+
+.tweetForm__text:focus{
+    font-family: sans-serif;
+    outline: none;
+    border-bottom: 1px solid lightgray;
+}
+
+.tweetForm__img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.tweetForm__img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.tweetForm__bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tweetForm__bottom > button{
+    border: none;
+    padding: 0.8em 1.6em;
+    height: fit-content;
+    font-size: 0.8em;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #1da1f2;
+    color: white;
+    cursor: pointer;
+}
+
+.tweetForm__bottom > button:hover{
+    background-color: #1A91DA;
+}
+
+.tweetForm__icons {
+    display: flex;
+    color:#39acf3;
+
+}   
+
+.tweetForm__icon {
+    margin: 0.2em;
+    padding:0.4em;
+    border-radius: 50%;
+    display: flex;
+}
+
+.tweetForm__icon:hover{
+    cursor: pointer;
+    background-color: #E8F5FE;
+}
+
+@media screen and (max-width:720px) {
+    .tweetForm__text{
+        margin-left: 0;
+    }
+
+    .tweetForm__icon {
+        margin: 0.1em;
+        padding:0.2em;
+    }
+}

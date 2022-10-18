@@ -1,0 +1,100 @@
+/* // hover nav E8F5FE
+// active nav 25a4f2
+// tweet 1da1f2
+// tweet hover 1A91DA */
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+}
+
+.navbar>*{
+    margin: 0.2em;
+}
+
+.twittericon{
+    border-radius: 50%;
+    padding: 0.4em;
+    width: fit-content;
+}
+
+.twittericon:hover{
+    background-color: #E8F5FE;
+}
+
+.twittericon a{
+    color: #1da1f2;
+}
+
+.navbar__item{
+    display: flex;
+    align-items: center;
+    padding: 0.6em 1em;
+    width: fit-content;
+    border-radius: 40px;
+}
+
+.navbar__item.active{
+    color: #25a4f2;
+}
+
+.navbar__item:hover{
+    cursor: pointer;
+    background-color: #E8F5FE;
+}
+
+.navbar__item h3{
+    margin-left: 0.2em;
+}
+
+.navbar__tweet{
+    width: 80%;
+    padding:0.6em 2em;
+    border: none;
+    color: white;
+    background-color: #1da1f2;
+    border-radius: 40px;
+
+}
+
+.navbar__tweet:hover{
+    cursor: pointer;
+    background-color: #1A91DA;
+}
+
+.navbar__profile{
+    margin-top: auto;
+}
+
+@media screen and (max-width:720px){
+
+    .navbar__item > h3{
+        display: none;
+    }
+
+    .navbar__item{
+        padding:0.6em;
+    }
+}
+
+@media screen and (max-width:720px){
+
+    .tweetForm{
+        padding: 0.2em;
+    }
+
+    .tweetForm__img{
+        padding-top: 2px;
+        margin-right: 4px;
+    }
+    .navbar__item{
+        padding:0.3em;
+    }
+
+    .tweetForm__bottom > button {
+        padding: 0.4em 1em;
+    }
+}

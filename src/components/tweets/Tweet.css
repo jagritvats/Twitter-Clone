@@ -1,0 +1,119 @@
+.tweet{
+    padding: 1em;
+    display: flex;
+}
+
+.tweet__authorImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.tweet__authorInfo{
+    padding-top: 2px;
+    display: flex;
+    gap:0.4em;
+    align-items: center;
+}
+
+.tweet__authorInfo > h5{
+    font-size: 1em;
+}
+
+.tweet__authorInfo p{
+    font-size: 0.9em;
+    color: #5b7083;
+}
+
+.tweet__authorInfo > span{
+    padding: 0.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tweet__content{
+    width: 100%;
+}
+
+.tweet__main{
+    margin: 0.4em 0em;
+}
+
+.tweet__attachments{
+    display: flex;
+}
+
+.tweet__buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    color: #5b7083;
+    font-size: 0.8em;
+}
+
+.tweet__button{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.tweet__button::after{
+    content: attr(data-tooltip);
+    display: block;
+    position: absolute;
+    bottom:0px;
+    left:0px;
+    transform: scale(0);
+    transition: transform ease-out 150ms,
+                bottom ease-out 150ms;
+}
+
+.tweet__button:hover::after{
+    bottom:-14px;
+    transform: scale(1);
+}
+
+.tweet__button > .MuiSvgIcon-root{
+    border-radius: 50%;
+    padding:0.2em;
+    font-size: 2.8em;
+}
+
+.tweet__button > p {
+    margin-left: 10px;
+}
+
+.tweet__authorImg > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.active-red:hover, .active-red.selected{
+    color: rgb(224,36,94);
+}
+
+.active-red.active-btn>.MuiSvgIcon-root{color:rgb(224,36,94)}
+
+.active-red:hover > .MuiSvgIcon-root{
+    background-color: rgba(224, 36, 96, 0.1);
+}
+
+.active-blue:hover, .active-blue.selected{
+    color: #1da1f2;
+}
+
+.active-blue:hover > .MuiSvgIcon-root{
+    background-color: #1da0f227;
+}
+
+.active-green:hover, .active-green.selected{
+    color: rgb(23,191,99);
+}
+
+.active-green:hover > .MuiSvgIcon-root{
+    background-color: rgb(23,191,99,0.1);
+}
