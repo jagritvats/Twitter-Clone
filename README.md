@@ -8,7 +8,7 @@ In the project directory, you can run:
 ### `npm install vite`
 
 For Developer Server
-### `npm dev`
+### `npm run dev`
 
 For Build
 ### `npm run build`
