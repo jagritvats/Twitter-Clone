@@ -11,6 +11,8 @@
   
   max-width: 1080px;
   width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .App > .MuiCircularProgress-root{
@@ -22,6 +24,7 @@
   height: 100%;
   width: 100%;
   display: flex;
+  max-height: 100vh;
 }
 
 .App__content>*{
@@ -32,8 +35,8 @@
   position: sticky;
   top:0px;
   flex: 0.2;
-  min-height: 100vh;
-  height: 100vh;
+  /* min-height: 100vh;
+  height: 100vh; */
   overflow-y: auto;
 }
 
@@ -81,7 +84,6 @@ a{
 textarea {
   font-family: inherit;
 }
-
 
 @media screen and (max-width:720px){
 

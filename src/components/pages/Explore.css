@@ -1,0 +1,13 @@
+.explore__content{
+    padding: 0.4em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    overflow: scroll;
+}
+
+.expore__users{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+}

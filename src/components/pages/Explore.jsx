@@ -5,6 +5,8 @@ import Tweet from '../tweets/Tweet';
 
 import blank_profile_img from '../auth/blank_profile_img.png';
 
+import './Explore.css';
+
 function Explore() {
 	let [users, setUsers] = useState(null);
 	let [tweets, setTweets] = useState(null);
@@ -42,44 +44,47 @@ function Explore() {
 				<h2>Explore, Find Users</h2>
 			</header>
 
-			<div className="expore__users">
-				<h3>Explore Users</h3>
+			<div className="explore__content">
+				<div className="expore__users">
+					<h3>Explore Users</h3>
 
-				{users
-					? users.map((user) => (
-							<Link
-								to={'/profile/' + user.uid}
-								className="tweet__authorInfo"
-							>
-								<img
-									src={
-										user.photoURL
-											? user.photoURL
-											: blank_profile_img
-									}
-									alt=""
-									className="tweet__authorImg"
-								/>
-								<h5>{user.fname + ' ' + user.lname}</h5>
-								<p>@{user.username}</p>
-							</Link>
-					  ))
-					: 'loading'}
-			</div>
-
-			<div className="explore__tweets">
-				<h3>Explore Tweets</h3>
-
-				<div>
-					{tweets
-						? tweets.map((tweet) => (
-								<Tweet
-									key={tweet.id}
-									{...tweet}
-									isSubTweet={true}
-								/>
+					{users
+						? users.map((user) => (
+								<Link
+									to={'/profile/' + user.uid}
+									key={user.uid}
+									className="tweet__authorInfo"
+								>
+									<img
+										src={
+											user.photoURL
+												? user.photoURL
+												: blank_profile_img
+										}
+										alt=""
+										className="tweet__authorImg"
+									/>
+									<h5>{user.fname + ' ' + user.lname}</h5>
+									<p>@{user.username}</p>
+								</Link>
 						  ))
 						: 'loading'}
+				</div>
+
+				<div className="explore__tweets">
+					<h3>Explore Tweets</h3>
+
+					<div>
+						{tweets
+							? tweets.map((tweet) => (
+									<Tweet
+										key={tweet.id}
+										{...tweet}
+										isSubTweet={true}
+									/>
+							  ))
+							: 'loading'}
+					</div>
 				</div>
 			</div>
 		</div>

@@ -12,6 +12,7 @@ import { useHistory } from 'react-router-dom';
 import blank_profile_img from '../auth/blank_profile_img.png';
 import { selectUser } from '../../features/userSlice';
 import { useSelector } from 'react-redux';
+import { Button } from '@material-ui/core';
 
 function Profile({ userProfile }) {
 	const currentUser = useSelector(selectUser);
@@ -106,13 +107,15 @@ function Profile({ userProfile }) {
 							followers
 						</p>
 						{!otherProfile ? (
-							<button
+							<Button
 								onClick={() => {
 									auth.signOut();
 								}}
+								variant="outlined"
+								color="secondary"
 							>
 								Sign Out
-							</button>
+							</Button>
 						) : (
 							''
 						)}

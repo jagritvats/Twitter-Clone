@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../../features/userSlice';
 import { Link } from 'react-router-dom';
 import Comment from './Comment';
+import Loading from '../layout/Loading';
 
 export const TweetButton = (
 	Icon,
@@ -154,7 +155,7 @@ function Tweet({
 	return (
 		<Link to={'/tweet/' + id} className="tweet">
 			{loading ? (
-				<CircularProgress />
+				<Loading />
 			) : (
 				<>
 					<Link to={'/profile/' + user} className="tweet__authorImg">

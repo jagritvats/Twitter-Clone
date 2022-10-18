@@ -1,0 +1,88 @@
+.messages{
+    position: relative;
+    /* border: 1px solid black; */
+    padding-bottom: 1em;
+}
+
+
+.messages__list{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    padding: 0.4em;
+    
+    padding-bottom: 1em;
+    padding-bottom: calc(1em + 20px );
+    max-height: 80vh;
+    overflow: scroll;
+}
+
+.message{
+    padding: 0.6em 1em;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 1px 1px lightgray;
+    border-radius: 20px 0 20px 20px;
+}
+
+.your__msg{
+    border-radius: 0px 10px 20px 20px;
+    box-shadow: 0px 0px 1px 1px lightblue;
+}
+
+.message__author{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.message__send{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    min-width: 200px;
+    max-width: 720px;
+}
+
+.message__send form{
+    display: flex;
+    z-index: 1;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    position: sticky; 
+    bottom: 10px;
+    width: 100%;
+    
+    background-color: white;
+}
+
+.message__box{
+    min-height: 50px;
+    width: 70%;
+    margin-bottom: 0.4em;
+    border: 1px solid black;
+}
+
+@media screen and (max-width:720px){
+    .message__box{
+        min-height: 50px;
+        width: 70%;
+    }
+
+    .message{
+        padding: 1em;
+    }
+   
+  }
+  
+  @media screen and (max-width:480px){
+    .sidebar{
+      display: none;
+    }
+  
+    .App__content{
+      flex: 0.9;
+    }
+  }

@@ -1,12 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import { Button, TextField } from '@material-ui/core';
+import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { db } from '../../app/config/firebase';
 import { selectUser } from '../../features/userSlice';
+import './Messages.css';
 
 function Messages() {
 	let [messages, setMessages] = useState(null);
 
 	let [message, setMessage] = useState('');
+
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(false);
+	let [rendered, setRendered] = useState(false);
+
+	const endmsgs = useRef(null);
 
 	let currentUser = useSelector(selectUser);
 
@@ -19,17 +27,28 @@ function Messages() {
 		//     setMessages(temp)
 		// })
 
-		const unsub = db
-			.collection('messages')
-			.orderBy('time', 'asc')
-			.onSnapshot((docs) => {
-				var temp = [];
-				docs.forEach((doc) => {
-					temp.push(doc.data());
-				});
-				setMessages(temp);
-			});
+		let unsub;
 
+		try {
+			unsub = db
+				.collection('messages')
+				.orderBy('time', 'asc')
+				// .limitToLast(10)
+				.onSnapshot((docs) => {
+					var temp = [];
+					docs.forEach((doc) => {
+						temp.push(doc.data());
+					});
+					setMessages(temp);
+					setLoading(false);
+				});
+			// workaround for scrolling to end
+			setTimeout(() => {
+				endmsgs.current.scrollIntoView({ behavior: 'smooth' });
+			}, 1000);
+		} catch (err) {
+			setError(true);
+		}
 		return () => unsub();
 	}, []);
 
@@ -51,25 +70,31 @@ function Messages() {
 			.add(messageObj)
 			.then(() => {
 				setMessage('');
+				setTimeout(() => {
+					endmsgs.current.scrollIntoView({ behavior: 'smooth' });
+				}, 1000);
 			});
 	};
 
+	if (error) {
+		return (
+			<div>
+				<p color="red">Error Occured</p>
+			</div>
+		);
+	}
+
+	if (!loading && endmsgs.previous) {
+		endmsgs.current.scrollIntoView({ behavior: 'smooth' });
+	}
+
 	return (
-		<div
-			className="messages"
-			style={{
-				height: '100vh',
-				position: 'sticky',
-				overflow: 'auto',
-				top: '0px',
-				paddingBottom: '2em',
-			}}
-		>
+		<div className="messages">
 			<header className="messages__header">
 				<h2>Live Chat</h2>
 			</header>
 
-			<div className="messages">
+			<div className="messages__list">
 				{messages
 					? messages.map((message) => (
 							<div
@@ -77,7 +102,7 @@ function Messages() {
 									'message' +
 									(message.author.uid ===
 									currentUser.userData.uid
-										? 'your-msg'
+										? ' your__msg'
 										: '')
 								}
 							>
@@ -92,23 +117,29 @@ function Messages() {
 							</div>
 					  ))
 					: 'Loading'}
+				<div id="endmsgs" ref={endmsgs}></div>
 			</div>
 
-			<footer
-				className="message__send"
-				style={{ position: 'fixed', bottom: '10px', width: '100%' }}
-			>
+			<footer className="message__send">
 				<form onSubmit={sendMessage}>
-					<input
+					<TextField
+						autoFocus
 						type="text"
+						className="message__box"
 						value={message}
 						onChange={(e) => {
 							setMessage(e.target.value);
 						}}
+						variant="outlined"
+						placeholder="Enter your message"
 					/>
-					<button type="submit">Send</button>
+					<Button variant="contained" color="primary" type="submit">
+						Send
+					</Button>
 				</form>
 			</footer>
+			{/* for position sticky to work for message sending box */}
+			<div></div>
 		</div>
 	);
 }

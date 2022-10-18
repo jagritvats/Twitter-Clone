@@ -7,6 +7,7 @@ import { CircularProgress } from '@material-ui/core';
 
 import './Feed.css';
 import Tweet from './tweets/Tweet';
+import Loading from './layout/Loading';
 
 function Feed({ filterFunc = () => true }) {
 	const dispatch = useDispatch(logout());
@@ -36,11 +37,13 @@ function Feed({ filterFunc = () => true }) {
 	return (
 		<div className="feed">
 			{loading ? (
-				<CircularProgress />
-			) : (
+				<Loading />
+			) : tweets.length > 0 ? (
 				tweets
 					.filter(filterFunc)
 					.map((tweet) => <Tweet key={tweet.id} {...tweet} />)
+			) : (
+				<p>No Tweets to show</p>
 			)}
 		</div>
 	);

@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-console.log(import.meta.env);
 const firebaseConfig = {
 	apiKey: import.meta.env.VITE_FKEY,
 	authDomain: 'twitterclone-799f6.firebaseapp.com',
