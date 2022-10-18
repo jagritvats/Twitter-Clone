@@ -5,8 +5,13 @@ Twitter clone project bootstrapped with [Vite](https://vitejs.dev/guide/), using
 ## Available Scripts
 
 In the project directory, you can run:
+### `npm install vite`
 
-### `npm start`
+For Developer Server
+### `npm dev`
+
+For Build
+### `npm run build`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
