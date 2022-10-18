@@ -1,5 +1,7 @@
 Twitter clone project bootstrapped with [Vite](https://vitejs.dev/guide/), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/).
 
+## [Live Preview - Twitter Clone](https://twitter-clone-jv.netlify.app/)
+
 ## Currently Work In Progress
 
 ## Available Scripts
